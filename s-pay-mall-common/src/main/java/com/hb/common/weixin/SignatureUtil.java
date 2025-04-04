@@ -1,4 +1,4 @@
-package com.hb.common;
+package com.hb.common.weixin;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

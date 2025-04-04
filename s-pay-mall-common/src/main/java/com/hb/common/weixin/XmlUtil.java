@@ -1,4 +1,4 @@
-package com.hb.common;
+package com.hb.common.weixin;
 
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.core.util.QuickWriter;

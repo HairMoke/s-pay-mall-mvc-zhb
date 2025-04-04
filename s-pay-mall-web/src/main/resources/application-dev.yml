@@ -12,6 +12,10 @@ weixin:
   config:
     originalid: gh_9ea6d9cb1442
     token: weixin
+    app-id: wx90813c7b140f7d13
+    app-secret: eac1ecb9ccaa5d63342beadd7cf3c32b
+    template_id: 9djrX1iJ6lrBUATIAN1NKgsIy7Y8-rRaLbZN5P2zLbw
+
 
 spring:
   datasource:
@@ -32,7 +36,7 @@ spring:
     maxPoolPreparedStatementPerConnectionSize: 20
     filters: stat
 
-  redisson:
+
 
 
 

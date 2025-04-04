@@ -8,6 +8,7 @@ import com.hb.controller.dto.CreatePayRequestDTO;
 import com.hb.domain.req.ShopCartReq;
 import com.hb.domain.res.PayOrderRes;
 import com.hb.service.IOrderService;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
@@ -84,7 +85,6 @@ public class AliPayController {
         String tradeNo = params.get("out_trade_no");
         String gmtPayment = params.get("gmt_payment");
         String alipayTradeNo = params.get("trade_no");
-
         String sign = params.get("sign");
         String content = AlipaySignature.getSignCheckContentV1(params);
         boolean checkSignature = AlipaySignature.rsa256CheckContent(content, sign, alipayPublicKey, "UTF-8");
@@ -105,8 +105,15 @@ public class AliPayController {
         log.info("支付回调，买家付款金额: {}", params.get("buyer_pay_amount"));
         log.info("支付回调，支付回调，更新订单 {}", tradeNo);
 
+        // 更新订单未已支付
+        orderService.changeOrderPaySuccess(tradeNo);
+
         return "success";
     }
 
+    @GetMapping("test")
+    public String test(){
+        return "hello, hb";
+    }
 
 }

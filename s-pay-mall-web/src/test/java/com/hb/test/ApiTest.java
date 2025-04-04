@@ -1,4 +1,4 @@
-package cn.bugstack.test;
+package com.hb.test;
 
 /**
  * @author Fuzhengwei bugstack.cn @小傅哥
